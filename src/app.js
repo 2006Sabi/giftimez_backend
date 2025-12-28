@@ -8,7 +8,12 @@ const orderRoutes = require('./routes/orderRoutes');
 const app = express();
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+    origin: ['https://giftimez-frontend-53pu.vercel.app', 'http://localhost:5173'],
+    credentials: true,
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Routes
